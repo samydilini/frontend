@@ -1,5 +1,8 @@
 # frontend
 
+This will read from the end point exposed in learnings2024.
+Therefore, learnings2024 docker should start before doing this
+
 Inside that directory, you can run several commands:
 
 npm start
