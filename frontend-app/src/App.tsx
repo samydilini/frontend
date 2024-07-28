@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import "./App.css";
 import { Button } from "react-bootstrap";
 import ListTable from "./components/ListTable";
+import { apiUrl } from "./configuration/config";
 
 function App() {
   const [userNames, setUserNames] = useState<string[]>([]);
@@ -14,9 +15,8 @@ function App() {
     setUserClick(true);
     var returnedValues: string[] = [];
     try {
-      const response = await fetch("http://localhost:8081/users");
+      const response = await fetch(apiUrl + "users");
       const data = await response.json();
-      console.log(data);
       data.forEach((element: { accountName: string }) => {
         returnedValues.push(element.accountName);
       });
